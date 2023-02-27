@@ -4,7 +4,7 @@ function Footer() {
 
 		<footer className="footer page__footer">
 
-			<p className="footer__copyright">&copy; 2022 Mesto Russia</p>
+			<p className="footer__copyright">&copy; {new Date().getFullYear()} Mesto Russia</p>
 		</footer>
 	)
 }

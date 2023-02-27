@@ -1,6 +1,4 @@
 import React from 'react';
-import PopupWithForm from './PopupWithForm';
-import ImagePopup from './ImagePopup';
 import api from '../utils/Api';
 import Card from './Card';
 
@@ -8,14 +6,9 @@ import Card from './Card';
 function Main({
 
 	onEditAvatar,
-	isEditAvatarPopupOpen,
 	onEditProfile,
-	isEditProfilePopupOpen,
 	onAddPlace,
-	isAddPlacePopupOpen,
 	onCardClick,
-	selectedCard,
-	onClose
 }) {
 
 	const [userName, setUserName] = React.useState(null);
@@ -76,61 +69,6 @@ function Main({
 				</ul>
 
 			</section>
-
-			<PopupWithForm isOpen={isEditAvatarPopupOpen} onClose={onClose} title="Редактировать профиль" name="profile" buttonText="Сохранить" children={
-
-				<fieldset className="form__fieldset">
-
-					<label className="form__field">
-
-						<input id="input-name" className="form__input" placeholder="Имя" type="text" name="name" required minLength="2" maxLength="40" />
-						<span className="input-name-error form__input-error"></span>
-					</label>
-
-					<label className="form__field">
-
-						<input id="input-job" className="form__input" placeholder="О себе" type="text" name="job" required minLength="2" maxLength="200" />
-						<span className="input-job-error form__input-error"></span>
-					</label>
-
-				</fieldset>
-			} />
-
-			<PopupWithForm isOpen={isEditProfilePopupOpen} onClose={onClose} title="Новое место" name="add-place" buttonText="Создать" children={
-
-				<fieldset className="form__fieldset">
-
-					<label className="form__field">
-
-						<input id="input-place-name" className="form__input" placeholder="Название" type="text" name="name" required minLength="2" maxLength="30" />
-						<span className="input-place-name-error form__input-error"></span>
-					</label>
-
-					<label className="form__field">
-
-						<input id="input-place-link" className="form__input" placeholder="Ссылка на картинку" type="url" name="link" required />
-						<span className="input-place-link-error form__input-error"></span>
-					</label>
-
-				</fieldset>
-			} />
-
-			<PopupWithForm isOpen={isAddPlacePopupOpen} onClose={onClose} title="Обновить аватар" name="update-avatar" buttonText="Сохранить" children={
-
-				<fieldset className="form__fieldset">
-
-					<label className="form__field">
-
-						<input id="input-avatar-link" className="form__input" placeholder="Ссылка на новый аватар" type="url" name="avatar" required />
-						<span className="input-avatar-link-error form__input-error"></span>
-					</label>
-
-				</fieldset>
-			} />
-
-			<PopupWithForm isOpen={''} title="Вы уверены?" name="confirmation" buttonText="Да" children={''} />
-
-			<ImagePopup onClose={onClose} card={selectedCard} />
 
 		</main>
 	)

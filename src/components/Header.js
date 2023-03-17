@@ -6,7 +6,11 @@ function Header() {
 
 		<header className="header page__header">
 
-			<img className="header__logo" src={logo} alt="Логотип проекта" />
+			<img
+				className="header__logo"
+				src={logo}
+				alt="Логотип проекта"
+			/>
 		</header>
 	)
 }

@@ -6,10 +6,20 @@ function ImagePopup({ card, onClose }) {
 
 			<div className="card-review">
 
-				<img className="card-review__img" src={card.link} alt={card.title} />
+				<img
+					className="card-review__img"
+					src={card.link}
+					alt={card.title}
+				/>
+
 				<h2 className="card-review__title">{card.name}</h2>
 
-				<button onClick={onClose} className="card-review__close-button close-button" type="button"></button>
+				<button
+
+					onClick={onClose}
+					className="card-review__close-button close-button"
+					type="button">
+				</button>
 
 			</div>
 

@@ -2,7 +2,11 @@ import React from "react";
 import PopupWithForm from "./PopupWithForm";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-function EditProfilePopup({ isOpen: isEditAvatarPopupOpen, onClose: closeAllPopups, onUpdateUser }) {
+function EditProfilePopup({
+	isOpen: isEditAvatarPopupOpen,
+	onClose: closeAllPopups,
+	onUpdateUser
+}) {
 
 	const currentUser = React.useContext(CurrentUserContext);
 
@@ -35,18 +39,51 @@ function EditProfilePopup({ isOpen: isEditAvatarPopupOpen, onClose: closeAllPopu
 
 	return (
 
-		<PopupWithForm isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onSubmit={handleSubmit} title="Редактировать профиль" name="profile" buttonText="Сохранить">
+		<PopupWithForm
+			isOpen={isEditAvatarPopupOpen}
+			onClose={closeAllPopups}
+			onSubmit={handleSubmit}
+			title="Редактировать профиль"
+			name="profile"
+			buttonText="Сохранить"
+		>
 
 			<fieldset className="form__fieldset">
 
 				<label className="form__field">
-					<input id="input-name" className="form__input" value={name} placeholder="Имя" type="text" name="name" required minLength="2" maxLength="40" onChange={handleNameChange} />
+
+					<input
+						id="input-name"
+						className="form__input"
+						value={name}
+						placeholder="Имя"
+						type="text"
+						name="name"
+						required
+						minLength="2"
+						maxLength="40"
+						onChange={handleNameChange}
+					/>
 					<span className="input-name-error form__input-error"></span>
+
 				</label>
 
 				<label className="form__field">
-					<input id="input-job" className="form__input" value={description} placeholder="О себе" type="text" name="job" required minLength="2" maxLength="200" onChange={handleDescriptionChange} />
+
+					<input
+						id="input-job"
+						className="form__input"
+						value={description}
+						placeholder="О себе"
+						type="text"
+						name="job"
+						required
+						minLength="2"
+						maxLength="200"
+						onChange={handleDescriptionChange}
+					/>
 					<span className="input-job-error form__input-error"></span>
+
 				</label>
 
 			</fieldset>

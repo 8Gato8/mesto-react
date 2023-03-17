@@ -1,7 +1,11 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
-function AddPlacePopup({ isOpen: isAddPlacePopupOpen, onClose: closeAllPopups, onAddPlace }) {
+function AddPlacePopup({
+	isOpen: isAddPlacePopupOpen,
+	onClose: closeAllPopups,
+	onAddPlace
+}) {
 
 	const [name, setName] = React.useState('');
 	const [link, setLink] = React.useState('');
@@ -26,19 +30,59 @@ function AddPlacePopup({ isOpen: isAddPlacePopupOpen, onClose: closeAllPopups, o
 		});
 	}
 
+	React.useEffect(() => {
+
+		setName('');
+		setLink('');
+	}, [isAddPlacePopupOpen]);
+
 	return (
 
-		<PopupWithForm isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onSubmit={handleSubmit} title="Новое место" name="add-place" buttonText="Создать">
+		<PopupWithForm
+			isOpen={isAddPlacePopupOpen}
+			onClose={closeAllPopups}
+			onSubmit={handleSubmit}
+			title="Новое место"
+			name="add-place"
+			buttonText="Создать"
+		>
 
 			<fieldset className="form__fieldset">
+
 				<label className="form__field">
-					<input id="input-place-name" className="form__input" value={name} placeholder="Название" type="text" name="name" required minLength="2" maxLength="30" onChange={handleNameChange} />
+
+					<input
+						id="input-place-name"
+						className="form__input"
+						value={name}
+						placeholder="Название"
+						type="text"
+						name="name"
+						required
+						minLength="2"
+						maxLength="30"
+						onChange={handleNameChange}
+					/>
 					<span className="input-place-name-error form__input-error"></span>
+
 				</label>
+
 				<label className="form__field">
-					<input id="input-place-link" className="form__input" value={link} placeholder="Ссылка на картинку" type="url" name="link" required onChange={handleLinkChange} />
+
+					<input
+						id="input-place-link"
+						className="form__input"
+						value={link}
+						placeholder="Ссылка на картинку"
+						type="url"
+						name="link"
+						required
+						onChange={handleLinkChange}
+					/>
 					<span className="input-place-link-error form__input-error"></span>
+
 				</label>
+
 			</fieldset>
 
 		</PopupWithForm>

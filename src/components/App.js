@@ -108,11 +108,11 @@ function App() {
       .then((newUserInfo) => {
         setCurrentUser(newUserInfo);
       })
+      .then(() => {
+        closeAllPopups();
+      })
       .catch((err) => {
         console.log(err);
-      })
-      .finally(() => {
-        closeAllPopups();
       });
   }
 
@@ -122,7 +122,7 @@ function App() {
       .then((newUserInfo) => {
         setCurrentUser(newUserInfo);
       })
-      .finally(() => {
+      .then(() => {
         closeAllPopups();
       })
       .catch((err) => {
@@ -136,7 +136,7 @@ function App() {
       .then((newCard) => {
         setCards([newCard, ...cards]);
       })
-      .finally(() => {
+      .then(() => {
         closeAllPopups();
       })
       .catch((err) => {
@@ -165,15 +165,36 @@ function App() {
 
           <Footer />
 
-          <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
+          <EditProfilePopup
+            isOpen={isEditProfilePopupOpen}
+            onClose={closeAllPopups}
+            onUpdateUser={handleUpdateUser}
+          />
 
-          <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
+          <EditAvatarPopup
+            isOpen={isEditAvatarPopupOpen}
+            onClose={closeAllPopups}
+            onUpdateAvatar={handleUpdateAvatar}
+          />
 
-          <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit} />
+          <AddPlacePopup
+            isOpen={isAddPlacePopupOpen}
+            onClose={closeAllPopups}
+            onAddPlace={handleAddPlaceSubmit}
+          />
 
-          <PopupWithForm isOpen={''} onClose={closeAllPopups} title="Вы уверены?" name="confirmation" buttonText="Да" />
+          <PopupWithForm
+            isOpen={''}
+            onClose={closeAllPopups}
+            title="Вы уверены?"
+            name="confirmation"
+            buttonText="Да"
+          />
 
-          <ImagePopup onClose={closeAllPopups} card={selectedCard} />
+          <ImagePopup
+            onClose={closeAllPopups}
+            card={selectedCard}
+          />
 
         </div>
       </div>

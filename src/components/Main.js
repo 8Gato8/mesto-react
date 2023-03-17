@@ -23,18 +23,35 @@ function Main({
 			<section className="profile page__profile">
 
 				<div className="profile__avatar-container">
-					<div onClick={onEditAvatar} className="profile__avatar-mask"></div>
-					<img className="profile__avatar" src={currentUser.avatar} alt="Аватар профиля" />
+
+					<div
+						onClick={onEditAvatar}
+						className="profile__avatar-mask">
+					</div>
+
+					<img
+						className="profile__avatar"
+						src={currentUser.avatar}
+						alt="Аватар профиля"
+					/>
+
 				</div>
 
 				<div className="profile__info">
 					<h1 className="profile__name">{currentUser.name}</h1>
 					<p className="profile__job">{currentUser.about}</p>
-					<button onClick={onEditProfile} className="profile__edit-button" type="button">
+
+					<button
+						onClick={onEditProfile}
+						className="profile__edit-button"
+						type="button">
 					</button>
 				</div>
 
-				<button onClick={onAddPlace} className="profile__add-button" type="button">
+				<button
+					onClick={onAddPlace}
+					className="profile__add-button"
+					type="button">
 				</button>
 
 			</section>
@@ -45,7 +62,13 @@ function Main({
 
 					{cards.map((card) => (
 
-						<Card card={card} key={card._id} onCardClick={onCardClick} onCardLike={onCardLike} onCardDelete={onCardDelete} />
+						<Card
+							card={card}
+							key={card._id}
+							onCardClick={onCardClick}
+							onCardLike={onCardLike}
+							onCardDelete={onCardDelete}
+						/>
 					))}
 				</ul>
 

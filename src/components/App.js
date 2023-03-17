@@ -10,6 +10,7 @@ import AddPlacePopup from './AddPlacePopup';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
+import { checkIfCardIsLiked } from '../utils/constants';
 
 function App() {
 
@@ -64,11 +65,10 @@ function App() {
     setSelectedCard(card);
   }
 
+
   function handleCardLike(card) {
 
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
-
-    (isLiked ? api.deleteLike(card._id) : api.likeCard(card._id))
+    ((checkIfCardIsLiked(card, currentUser) === true) ? api.deleteLike(card._id) : api.likeCard(card._id))
       .then((newCard) => {
         setCards((state) => {
           return state.map((c) => c._id === card._id ? newCard : c)

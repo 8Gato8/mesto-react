@@ -3,7 +3,7 @@ import PopupWithForm from "./PopupWithForm";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function EditProfilePopup({
-	isOpen: isEditAvatarPopupOpen,
+	isOpen: isEditProfilePopupOpen,
 	onClose: closeAllPopups,
 	onUpdateUser
 }) {
@@ -40,7 +40,7 @@ function EditProfilePopup({
 	return (
 
 		<PopupWithForm
-			isOpen={isEditAvatarPopupOpen}
+			isOpen={isEditProfilePopupOpen}
 			onClose={closeAllPopups}
 			onSubmit={handleSubmit}
 			title="Редактировать профиль"

@@ -8,9 +8,9 @@ function Main({
 	onEditAvatar,
 	onEditProfile,
 	onAddPlace,
+	onDeleteClick,
 	onCardClick,
 	onCardLike,
-	onCardDelete,
 	cards
 }) {
 
@@ -67,7 +67,7 @@ function Main({
 							key={card._id}
 							onCardClick={onCardClick}
 							onCardLike={onCardLike}
-							onCardDelete={onCardDelete}
+							onDeleteClick={onDeleteClick}
 						/>
 					))}
 				</ul>

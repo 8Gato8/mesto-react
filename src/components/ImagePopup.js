@@ -1,8 +1,12 @@
-function ImagePopup({ card, onClose }) {
+function ImagePopup({
+	isOpen,
+	onClose,
+	card,
+}) {
 
-	return (card) ? (
+	return (
 
-		<div className="popup popup_type_card-review popup_opened">
+		<div className={`popup popup_type_card-review ${isOpen ? 'popup_opened' : ''}`}>
 
 			<div className="card-review">
 
@@ -24,7 +28,7 @@ function ImagePopup({ card, onClose }) {
 			</div>
 
 		</div>
-	) : '';
+	);
 }
 
 export default ImagePopup;

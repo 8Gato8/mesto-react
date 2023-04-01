@@ -5,7 +5,8 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext";
 function EditProfilePopup({
 	isOpen: isEditProfilePopupOpen,
 	onClose: closeAllPopups,
-	onUpdateUser
+	onUpdateUser,
+	buttonText
 }) {
 
 	const currentUser = React.useContext(CurrentUserContext);
@@ -45,7 +46,7 @@ function EditProfilePopup({
 			onSubmit={handleSubmit}
 			title="Редактировать профиль"
 			name="profile"
-			buttonText="Сохранить"
+			buttonText={buttonText}
 		>
 
 			<fieldset className="form__fieldset">

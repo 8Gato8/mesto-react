@@ -5,7 +5,8 @@ import { SelectedCardContext } from "../contexts/SelectedCardContext";
 function ConfirmationPopup({
 	isOpen: isConfirmationPopupOpen,
 	onClose: closeAllPopups,
-	onDeleteConfirmation
+	onDeleteConfirmation,
+	buttonText
 }) {
 
 	const selectedCard = React.useContext(SelectedCardContext);
@@ -25,7 +26,7 @@ function ConfirmationPopup({
 			onSubmit={handleSubmit}
 			title="Вы уверены?"
 			name="confirmation"
-			buttonText="Да"
+			buttonText={buttonText}
 		/>
 	)
 }

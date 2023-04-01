@@ -4,7 +4,8 @@ import PopupWithForm from "./PopupWithForm";
 function AddPlacePopup({
 	isOpen: isAddPlacePopupOpen,
 	onClose: closeAllPopups,
-	onAddPlace
+	onAddPlace,
+	buttonText
 }) {
 
 	const [name, setName] = React.useState('');
@@ -44,7 +45,7 @@ function AddPlacePopup({
 			onSubmit={handleSubmit}
 			title="Новое место"
 			name="add-place"
-			buttonText="Создать"
+			buttonText={buttonText}
 		>
 
 			<fieldset className="form__fieldset">
